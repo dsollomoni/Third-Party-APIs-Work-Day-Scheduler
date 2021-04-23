@@ -1,14 +1,15 @@
+//Displays the current date
 var Today = moment().format('dddd, MMM Do YYYY');
 $("#currentDay").html(Today);
-
+    // Saves events
     $(".saveBtn").on("click", function(){
 
-        var text = $(this).siblings(".events").val();
+        var event = $(this).siblings(".events").val();
         var time = $(this).parent().attr("id");
 
-        localStorage.setItem(time, text);
+        localStorage.setItem(time, event);
     })
-
+    // fills in timeblock with scheduled event 
     function Clock() {
         var timeNow = moment().hour();
 
@@ -26,7 +27,7 @@ $("#currentDay").html(Today);
 
             }
         })
-
+        //displays saved events
          $("#8 .events").val(localStorage.getItem("8"));
          $("#9 .events").val(localStorage.getItem("9"));
          $("#10 .events").val(localStorage.getItem("10"));
